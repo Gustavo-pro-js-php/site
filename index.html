@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Simples</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>FOFOCA NO ESCRITÓRIO</h1>
+            <nav>
+                <ul>
+                   
+                    <li><a href="#sobre">ELIS EDUARDA, EMILI DAYANE, GUSTAVO ARRUDA E SIMONE ALINETE.  </a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section id="posts">
+                <article>
+                    <img src="imagens/postagemG.jpeg" alt="Analise Preditiva" />
+                    <h2>Analise Preditiva</h2>
+                    <p>A análise preditiva é uma forma avançada...</p>
+                    <a class="ler-mais" href="https://cloud.google.com/learn/what-is-predictive-analytics?hl=pt-BR" target="_blank">Leia mais</a>
+                    <button class="assistir-video" data-video-url="https://www.youtube.com/embed/W8E3kN49OwQ">Assistir Vídeo</button>
+                </article>
+                <article>
+                    <img src="imagens/FakeNew.jpeg" alt="Tecnologias emergentes na logística" />
+                    <h2>Quais são as tecnologias emergentes na logística?</h2>
+                    <p>Descubra as tecnologias que estão revolucionando...</p>
+                    <a class="ler-mais" href="
+                    https://driv.in/blog/principales-tendencia-en-tecnologia-logistica" target="_blank">Leia mais</a>
+                    <button class="assistir-video" data-video-url="https://www.youtube.com/embed/BWvtrDnOcv8">Assistir Vídeo</button>
+                </article>
+                <article>
+                    <img src="imagens/rifd.png" alt="RFID na logística industrial" />
+                    <h2>RFID: o que é, como funciona e quais suas vantagens para a logística industrial</h2>
+                    <p>O RFID está transformando a logística industrial...</p>
+                    <a class="ler-mais" href="https://www.viaondarfid.com.br/o-que-e-rfid/" target="_blank">Leia mais</a>
+                    <button class="assistir-video" data-video-url="https://www.youtube.com/embed/8jO2LfTftWw">Assistir Vídeo</button>
+                </article>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Meu Blog. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Modal para vídeo -->
+    <div id="video-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <iframe 
+                id="video-frame" 
+                width="560" 
+                height="315" 
+                src="" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+
+    <script>
+        // Abrir modal com vídeo
+        document.querySelectorAll('.assistir-video').forEach(button => {
+            button.addEventListener('click', () => {
+                const videoUrl = button.getAttribute('data-video-url');
+                document.getElementById('video-frame').src = videoUrl;
+                document.getElementById('video-modal').style.display = 'block';
+            });
+        });
+
+        // Fechar modal
+        document.querySelector('.close').addEventListener('click', () => {
+            document.getElementById('video-frame').src = ''; // Limpa o vídeo
+            document.getElementById('video-modal').style.display = 'none';
+        });
+    </script>
+</body>
+
+</html>
